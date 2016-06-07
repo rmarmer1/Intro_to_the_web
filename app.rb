@@ -15,20 +15,20 @@ get '/random-cat' do
 end
 
 # add '?name=paul' to end of URL 
-get '/named-cat' do
+post '/named-cat' do
 	p params				# prints '{"name"=>"paul"}' to console
 	@name = params[:name]
-  age = params[:age]
+  @age = params[:age]
 	erb(:index)
 end
 
-# add '?name=paul' to end of URL 
-post '/named-cat' do
-  p params        # prints '{"name"=>"paul"}' to console
-  @name = params[:name]
-  @age = params[:age]
-  erb(:index)
-end
+# # add '?name=paul' to end of URL 
+# post '/named-cat' do
+#   p params        # prints '{"name"=>"paul"}' to console
+#   @name = params[:name]
+#   @age = params[:age]
+#   erb(:index)
+# end
 
 get '/cat-form' do
   p params
@@ -37,10 +37,10 @@ get '/cat-form' do
   erb(:cat_form)
 end
 
-post '/cat-form' do
-  p params
-  @name = params[:name]
-  @age = params[:age]
-  erb(:cat_form)
-end
+# post '/cat-form' do
+#   p params
+#   @name = params[:name]
+#   @age = params[:age]
+#   erb(:cat_form)
+# end
 
