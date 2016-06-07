@@ -9,7 +9,16 @@ get '/secret' do
 	"secret route"
 end
 
-get '/cat' do
-  @name = ["Amigo", "Oscar", "Viking"].sample
-  erb(:index)
+get '/random-cat' do
+	@name = ["Amigo", "Oscar", "Viking"].sample
+	erb(:index)
 end
+
+# add '?name=paul' to end of URL 
+get '/named-cat' do
+	p params				# prints '{"name"=>"paul"}' to console
+	@name = params[:name]
+	@age = params[:age]
+	erb(:index)
+end
+
